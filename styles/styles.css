@@ -1,0 +1,54 @@
+body {
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 400;
+}
+.primary-color {
+  background-color: #ff6f61;
+}
+.secondary-color {
+  background-color: #ffd54f;
+}
+.accent-color {
+  background-color: #4db6ac;
+}
+.background-c {
+  background-color: #ffffff;
+}
+.text-color {
+  color: #333333;
+}
+
+.donation-btn {
+  width: max-content;
+  padding: auto 4px auto 4px;
+  background-color: #ff6f61;
+  cursor: pointer;
+}
+.donation-modal-input {
+  margin-bottom: 6px;
+  padding-left: 10px;
+  height: 60px;
+  width: 100%;
+  font-size: large;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: rgb(225, 226, 220);
+  border: none;
+  cursor: pointer;
+}
+
+text-col {
+  color: #264653;
+}

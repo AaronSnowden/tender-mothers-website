@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tender Mothers - Contact Us</title>
+    <link href="/bootstrap-5/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/font_awesome/css/all.min.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <style>
+      body {
+        background-color: #ffffff;
+        color: #333333;
+      }
+      h2 {
+        font-size: clamp(30px, 5vw, 60px);
+      }
+      .navbar-brand,
+      .navbar-nav .nav-link {
+        color: #ffffff;
+      }
+      .contact-section {
+        padding: 50px 0;
+      }
+      .c-input {
+        margin: 8px;
+        height: 60px;
+        font-size: larger;
+        font-weight: 600;
+        border-radius: 100px;
+        cursor: pointer;
+      }
+      .c-textarea {
+        margin: 8px;
+        height: 150px;
+        font-size: larger;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .submit-btn {
+        border-radius: 100px;
+        padding: 10px 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .footer {
+        background-color: #4db6ac;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light secondary-color">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html"
+          ><img
+            src="assets/logo.jpg"
+            alt="logo"
+            class="img-fluid rounded mx-1"
+            style="width: 8%"
+          />TenderMothersOrg</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="index.html">Home</a>
+            </li>
+            <li class="nav-item fw-bold">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item fw-bold">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item fw-bold">
+              <a class="nav-link active" aria-current="page" href="contact.html"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item fw-bold donation-btn">
+              <a
+                class="nav-link text-light cursor-pointer"
+                data-bs-toggle="modal"
+                data-bs-target="#DonateModal"
+                >Donate Here</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="d-flex p-4 p-lg-5">
+      <!-- form -->
+      <div class="contact-section container">
+        <h2 class="mb-4 mx-2">Contact Us</h2>
+        <form>
+          <div class="form-group">
+            <!-- <label for="name">Name</label> -->
+            <input
+              type="text"
+              class="form-control c-input"
+              id="name"
+              placeholder="Name"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="email">Email</label> -->
+            <input
+              type="email"
+              class="form-control c-input"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="message">Message</label> -->
+            <textarea
+              class="form-control c-textarea"
+              id="message"
+              rows="4"
+              placeholder="Message"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn text-light accent-color submit-btn w-100 my-2 py-3"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- image -->
+      <div class="pt-5 w-100 d-none d-lg-block">
+        <center>
+          <img
+            src="assets/undraw_creative_woman.svg"
+            class="img-fluid w-100 mt-1"
+            alt=""
+            srcset=""
+          />
+        </center>
+      </div>
+    </main>
+
+    <!-- Donate modal -->
+    <div
+      class="modal fade"
+      id="DonateModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="DonateModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title fw-bold" id="DonateModalLabel">
+              Donate To TenderMothers
+            </h4>
+
+            <div
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </div>
+          </div>
+          <div class="modal-body">
+            <input
+              class="donation-modal-input"
+              type="text"
+              placeholder="Name"
+            />
+            <input
+              class="donation-modal-input"
+              type="text"
+              placeholder="Email"
+            />
+            <input
+              class="donation-modal-input"
+              type="number"
+              placeholder="Amount"
+            />
+
+            <div>
+              <div
+                id="donate-btn"
+                class="btn btn-primary btn-lg mt-3 fs-5 text-center"
+                @click="processDonation"
+              >
+                <span class="spinner-border d-none" role="status"></span>
+                <span>Send Donation</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="donate-modal-close-btn btn btn-default"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="fw-bold">Contact Us</h5>
+            <span class="mb-3">Email: tendermothers.org@gmail.com</span><br />
+            <span class="mb-3">Phone: +256 (783) 219-196</span><br />
+            <span class="mb-3">Phone: +256 (771) 970-933</span><br />
+            <span class="mb-3">Phone: +256 (782) 362-694</span>
+          </div>
+          <div class="col-md-4">
+            <h5 class="fw-bold">Follow Us</h5>
+            <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+          </div>
+          <div class="col-md-4">
+            <h5 class="fw-bold">Keep in touch</h5>
+            <form>
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2024 TenderMothers Organization. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

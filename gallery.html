@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TenderMothers-Gallery</title>
+    <link href="/bootstrap-5/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/font_awesome/css/all.min.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <style>
+      #gallery-container {
+        padding: 0 10%;
+        margin-left: 8%;
+      }
+      #gallery {
+        column-count: 4;
+        column-gap: 1px;
+      }
+      #gallery-container center p {
+        font-size: clamp(30px, 5vw, 80px);
+        font-weight: 800;
+      }
+      .gallery-item {
+        display: inline-block;
+        margin-bottom: 4px;
+        margin-right: 4px;
+        width: 30%;
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .gallery-item img:hover {
+        opacity: 0.7;
+      }
+      .fullscreen {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        align-items: center;
+        justify-content: center;
+      }
+      .fullscreen img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+      @media (max-width: 1200px) {
+        #gallery {
+          column-count: 3;
+        }
+      }
+      @media (max-width: 768px) {
+        #gallery {
+          column-count: 2;
+        }
+      }
+      @media (max-width: 576px) {
+        #gallery-container {
+          padding: 0;
+          margin-left: 0;
+        }
+
+        #gallery {
+          column-count: 1;
+          margin-left: 2%;
+        }
+        .gallery-item {
+          display: inline-block;
+          margin-bottom: 10px;
+          width: 30%;
+          height: 200px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    </style>
+    <script src="/js/index.js"></script>
+  </head>
+  <body onload="loadImages(20)">
+    <header class="mb-3">
+      <nav class="navbar navbar-expand-lg navbar-light secondary-color">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="index.html"
+            ><img
+              src="assets/logo.jpg"
+              alt="logo"
+              class="img-fluid rounded mx-1"
+              style="width: 8%"
+            />TenderMothersOrg</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="index.html">Home</a>
+              </li>
+              <li class="nav-item fw-bold">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="gallery.html"
+                  >Gallery</a
+                >
+              </li>
+              <li class="nav-item fw-bold">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item fw-bold">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item fw-bold donation-btn">
+                <a
+                  class="nav-link text-light cursor-pointer"
+                  data-bs-toggle="modal"
+                  data-bs-target="#DonateModal"
+                  >Donate Here</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="gallery-container">
+        <center><p>gallery.</p></center>
+        <div id="gallery" class="row"></div>
+      </div>
+
+      <div id="fullscreen" class="fullscreen" onclick="closeFullscreen()"></div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-light mt-5 py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="fw-bold">Contact Us</h5>
+            <span class="mb-3">Email: tendermothers.org@gmail.com</span><br />
+            <span class="mb-3">Phone: +256 (783) 219-196</span><br />
+            <span class="mb-3">Phone: +256 (771) 970-933</span><br />
+            <span class="mb-3">Phone: +256 (782) 362-694</span>
+          </div>
+          <div class="col-md-4">
+            <h5 class="fw-bold">Follow Us</h5>
+            <a
+              href="https://www.facebook.com/profile.php?id=100078362796031&mibextid=LQQJ4d"
+              class="me-3"
+              ><i class="fab fa-facebook fs-3"></i
+            ></a>
+            <a href="https://www.youtube.com/@TenderMothers" class="me-3"
+              ><i class="fab fa-youtube fs-3 text-danger"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@tendermothers?_t=8pbu3n4bdRd&_r=1"
+              class="me-3"
+              ><img
+                src="assets/tik-tok.png"
+                class="img-fluid mb-2"
+                style="width: 6%"
+                alt="tiktok icon"
+            /></a>
+          </div>
+          <div class="col-md-4">
+            <h5 class="fw-bold">Keep in touch</h5>
+            <form>
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2024 TenderMothers Organization. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
