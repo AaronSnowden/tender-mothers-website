@@ -98,46 +98,14 @@
         background-color: rgb(230, 230, 227);
         border: none;
       }
-      .divider-custom {
-        margin: 0.15rem 0 1.5rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .divider-custom .divider-custom-line {
-        width: 100%;
-        max-width: 7rem;
-        height: 0.25rem;
-        background-color: #2c3e50;
-        border-radius: 1rem;
-        border-color: #2c3e50;
-      }
-      .divider-custom .divider-custom-line:first-child {
-        margin-right: 1rem;
-      }
-      .divider-custom .divider-custom-line:last-child {
-        margin-left: 1rem;
-      }
-      .divider-custom .divider-custom-icon {
-        color: #2c3e50;
-        font-size: 1.5rem;
-      }
-      .divider-custom.divider-light .divider-custom-line {
-        background-color: #fff;
-      }
-      .divider-custom.divider-light .divider-custom-icon {
-        color: #fff;
-      }
     </style>
-
-    <script src="/js/index.js"></script>
+    <script src="js/index.js"></script>
   </head>
-  <body>
+  <body onload="loadWebsiteContent()">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light secondary-color">
         <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html"
+          <a class="navbar-brand fw-bold" style="color: #333" href="index.html"
             ><img
               src="assets/logo.jpg"
               alt="logo"
@@ -176,7 +144,7 @@
                 <a
                   class="nav-link text-light cursor-pointer"
                   data-bs-toggle="modal"
-                  data-bs-target="#DonateModal"
+                  data-bs-target="#donationModal"
                   >Donate Here</a
                 >
               </li>
@@ -205,12 +173,14 @@
               alt="Charity Image 1"
             />
             <div class="carousel-caption">
-              <h1>TenderMothers Org</h1>
-              <p>Join us in our mission to create a better world for all.</p>
+              <h1 id="website-title">TenderMothers Org</h1>
+              <p id="website-subtitle">
+                Join us in our mission to create a better world for all.
+              </p>
               <button
                 class="btn secondary-color text-dark btn-donate"
                 data-bs-toggle="modal"
-                data-bs-target="#DonateModal"
+                data-bs-target="#donationModal"
               >
                 Donate Now
               </button>
@@ -238,14 +208,16 @@
         <div class="d-flex">
           <div class="bg-dark text-light w-50 px-md-5 py-3">
             <h2>Our Mission</h2>
-            <p>
+            <p id="website-mission">
               To have healthy and happy children, with fully independent mothers
             </p>
           </div>
 
           <div class="secondary-color w-50 px-md-5 py-3">
             <h2>Our Vision</h2>
-            <p>To have a world of happy mothers and children</p>
+            <p id="website-vision">
+              To have a world of happy mothers and children
+            </p>
           </div>
         </div>
       </section>
@@ -292,7 +264,8 @@
                 </center>
                 <div class="card-body">
                   <p class="card-text">
-                    To emphasize on hygiene among teenage mothers.
+                    To emphasize on hygiene among teenage mothers to improve
+                    quality of life.
                   </p>
                 </div>
               </div>
@@ -382,74 +355,111 @@
           </div>
 
           <!-- image 1 -->
-          <div class="my-5 d-flex justify-content-between">
-            <div class="w-50">
-              <h2>Arua City Kids Run</h2>
+          <div class="my-5 row">
+            <div class="col-12 col-md-6">
+              <h2 id="recent-activity-1-title">
+                A Joyful Moment at Tender Mothers Event
+              </h2>
               <h4>
-                <i>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
-                  nam incidunt quidem dolores magnam dolore praesentium a
-                  voluptas quod, ipsum numquam consectetur tempore ipsa laborum
+                <i class="lead" id="recent-activity-1-text">
+                  A young girl beams with joy at one of our community events,
+                  proudly wearing her Tender Mothers Organisation T-shirt.
+                  Surrounded by friends, she enjoys the fun atmosphere, complete
+                  with creative balloon hats and engaging activities. At Tender
+                  Mothers, we believe in creating safe spaces where children can
+                  thrive, smile, and feel supported.
                 </i>
               </h4>
             </div>
-            <div class="mx-5 px-5"></div>
-            <div class="row w-50 gap-1 photo-container">
-              <div class="col-4 mx-3">
-                <div
-                  style="
-                    width: 500px;
-                    height: 300px;
-                    border-radius: 20px;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-image: url('assets/Arua City Kids Run/image01.JPG');
-                  "
-                ></div>
-              </div>
+            <div class="col-12 col-md-6">
+              <div
+                id="recent-activity-1-image"
+                style="
+                  width: 100%;
+                  height: 300px;
+                  border-radius: 20px;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-image: url('assets/Arua City Kids Run/image01.JPG');
+                "
+              ></div>
             </div>
           </div>
           <hr />
+
           <!-- image 2 -->
-          <div class="my-5 d-flex justify-content-between">
-            <div class="row w-50 gap-1 photo-container">
-              <div class="col-4 mx-3">
-                <div
-                  style="
-                    width: 500px;
-                    height: 300px;
-                    border-radius: 20px;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-image: url('assets/Arua City Kids Run/image02.JPG');
-                  "
-                ></div>
-              </div>
+          <div class="my-5 row">
+            <div class="col-12 col-md-6">
+              <div
+                id="recent-activity-2-image"
+                style="
+                  width: 100%;
+                  height: 300px;
+                  border-radius: 20px;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-image: url('assets/Arua City Kids Run/image027.JPG');
+                "
+              ></div>
             </div>
-            <div class="mx-5 px-5"></div>
-            <div class="w-50">
-              <h2>Arua City Kids Run</h2>
+            <div class="col-12 col-md-6">
+              <h2 id="recent-activity-2-title">Building Friendships</h2>
               <h4>
-                <i>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
-                  nam incidunt quidem dolores magnam dolore praesentium a
-                  voluptas quod, ipsum numquam consectetur tempore ipsa laborum
+                <i class="lead" id="recent-activity-2-text">
+                  Two children share a lighthearted moment during the Tender
+                  Mothers Malnutrition Run 2024. This event brings communities
+                  together to raise awareness about child nutrition and
+                  well-being. Through play, conversation, and shared
+                  experiences, we foster a sense of belonging and hope for a
+                  healthier future.
                 </i>
               </h4>
+            </div>
+          </div>
+          <hr />
+
+          <!-- image 3 -->
+          <div class="my-5 row">
+            <div class="col-12 col-md-6">
+              <h2 id="recent-activity-3-title">Arua City Kids Run</h2>
+              <h4>
+                <i class="lead" id="recent-activity-3-text">
+                  A young participant at the Arua City Kids Fun Run Against
+                  Malnutrition strides forward with determination. This
+                  community event brings children together to promote health,
+                  fitness, and awareness of malnutrition issues.
+                </i>
+              </h4>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                id="recent-activity-3-image"
+                style="
+                  width: 100%;
+                  height: 300px;
+                  border-radius: 20px;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-image: url('assets/Arua City Kids Run/image022.JPG');
+                "
+              ></div>
             </div>
           </div>
 
           <center>
-            <button class="btn btn-light border text-primary">See more</button>
+            <button class="btn btn-light btn-link border text-primary">
+              <a href="/gallery.html">See more</a>
+            </button>
           </center>
         </div>
       </section>
 
       <!-- get involved -->
       <div style="height: 50px"></div>
-      <div class="container my-5" id="team">
+      <section class="container my-5" id="team">
         <h2 class="text-center">GET INVOLVED</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
@@ -482,14 +492,9 @@
             <div
               class="get-involved-card bg-light"
               data-bs-toggle="modal"
-              data-bs-target="#DonateModal"
+              data-bs-target="#donationModal"
             >
               <center>
-                <!-- <img
-                  src="assets/prof-pic.JPG"
-                  class="card-img-top img-fluid w-50"
-                  alt="Team Member 1"
-                /> -->
                 <i class="fas fa-money-bill fa-3x my-3 mt-5"></i>
                 <h5 class="card-title py-3 fw-bold">DONATING</h5>
               </center>
@@ -517,71 +522,77 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <hr />
     </main>
 
-    <!-- Donate modal -->
+    <!-- Donation Modal -->
     <div
-      class="modal fade"
-      id="DonateModal"
+      class="modal fade donate-modal"
+      id="donationModal"
       tabindex="-1"
-      role="dialog"
-      aria-labelledby="DonateModalLabel"
+      aria-labelledby="donationModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title fw-bold" id="DonateModalLabel">
-              Donate To TenderMothers
-            </h4>
-
-            <div
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-hidden="true"
-            >
-              &times;
-            </div>
-          </div>
-          <div class="modal-body">
-            <input
-              class="donation-modal-input"
-              type="text"
-              placeholder="Name"
-            />
-            <input
-              class="donation-modal-input"
-              type="text"
-              placeholder="Email"
-            />
-            <input
-              class="donation-modal-input"
-              type="number"
-              placeholder="Amount"
-            />
-
-            <div>
-              <div
-                id="donate-btn"
-                class="btn btn-primary btn-lg mt-3 fs-5 text-center"
-                @click="processDonation"
-              >
-                <span class="spinner-border d-none" role="status"></span>
-                <span>Send Donation</span>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
+            <h5 class="modal-title" id="donationModalLabel">
+              Support Tender Mothers
+            </h5>
             <button
               type="button"
-              class="donate-modal-close-btn btn btn-default"
+              class="btn-close"
               data-bs-dismiss="modal"
-            >
-              Close
-            </button>
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center">
+              Your donation helps empower mothers in rural communities.
+            </p>
+
+            <!-- Amount Selection -->
+            <div class="text-center mb-3">
+              <button class="btn btn-outline-primary amount-btn">
+                UGX5000
+              </button>
+              <button class="btn btn-outline-primary amount-btn">
+                UGX10000
+              </button>
+              <button class="btn btn-outline-primary amount-btn">
+                UGX20000
+              </button>
+              <button class="btn btn-outline-primary amount-btn">
+                UGX50000
+              </button>
+              <input
+                type="number"
+                class="form-control mt-2"
+                placeholder="Enter Custom Amount"
+              />
+            </div>
+
+            <!-- Payment Method -->
+            <h6 class="text-center">Choose Payment Method</h6>
+            <div class="text-center payment-icons">
+              <span
+                class="p-2 fw-bold fs-5 cursor-pointer"
+                style="background-color: yellow"
+                >MTN</span
+              >
+
+              <span
+                class="p-2 fw-bold text-light fs-5 cursor-pointer"
+                style="background-color: red"
+                >Airtel</span
+              >
+            </div>
+
+            <!-- Donate Button -->
+            <div class="text-center mt-4">
+              <button class="btn btn-success btn-lg w-100">Donate Now</button>
+            </div>
           </div>
         </div>
       </div>
@@ -706,6 +717,7 @@
         </div>
       </div>
     </footer>
+
     <script>
       const observer = new IntersectionObserver(
         (entries) => {

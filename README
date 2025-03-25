@@ -4,3 +4,5 @@ Secondary Color: #FFD54F (Amber)
 Accent Color: #4DB6AC (Teal)
 Background Color: #FFFFFF (White)
 Text Color: #333333 (Dark Grey)
+
+NOTE: To all readers of this code, i know it could have been written in a framework like react or vue,but i chose this way, simply out of desire and curiosity, and because i missed the legacy way we wrote websites. Thnk you

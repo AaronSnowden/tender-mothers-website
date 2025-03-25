@@ -6,12 +6,11 @@
     <title>TenderMothers - About Us</title>
     <link href="/bootstrap-5/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/font_awesome/css/all.min.css" />
-
     <link rel="stylesheet" href="styles/styles.css" />
     <style>
       .hero-image {
-        background-image: url("/assets/eye-for-ebony.webp");
-        height: 550px;
+        background-image: url("/assets/team-work.png");
+        height: 750px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -25,13 +24,30 @@
         transform: translate(-50%, -50%);
         color: white;
       }
+      .team-member img {
+        height: 30vh;
+        width: 100%;
+        position: static;
+        object-fit: cover;
+      }
+      @media (max-width: 767px) {
+        .hero-text {
+          color: #001f3f;
+        }
+      }
+      @media (min-width: 768px) {
+        /* Medium (md) and larger screens */
+        .who-we-are {
+          width: 50%;
+        }
+      }
     </style>
   </head>
-  <body>
+  <body onload="loadAbout()">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light secondary-color">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">
+        <a class="navbar-brand fw-bold" style="color: #333" href="index.html">
           <img
             src="assets/logo.jpg"
             alt="logo"
@@ -70,7 +86,7 @@
               <a
                 class="nav-link text-light cursor-pointer"
                 data-bs-toggle="modal"
-                data-bs-target="#DonateModal"
+                data-bs-target="#donationModal"
                 >Donate Here</a
               >
             </li>
@@ -83,110 +99,156 @@
       <!-- Hero Section -->
       <div class="hero-image">
         <div class="hero-text">
-          <h1>Empowering Mothers, Nurturing Futures</h1>
+          <h1
+            class="text-md-primary"
+            style="font-size: clamp(60px, 5vw, 80px); font-weight: bold"
+          >
+            ABOUT <span style="color: #001f3f"> US </span>
+          </h1>
         </div>
       </div>
     </header>
 
     <!-- Our Impact -->
-    <div class="bg-dark text-light">
-      <div class="container mb-5 py-2" id="impact">
+    <section class="text-light" style="background-color: #001f3f">
+      <div class="container mb-5 pt-4" id="impact">
         <!-- <h2 class="text-center mb-4">Our Impact</h2> -->
         <div class="row">
           <div class="col-md-4 text-center">
             <i class="fas fa-home fa-3x mb-3"></i>
             <h3 class="stat-number" data-target="1000">0</h3>
-            <p>Families Housed</p>
+            <p style="letter-spacing: 2px">Families Housed</p>
           </div>
           <div class="col-md-4 text-center">
             <i class="fas fa-graduation-cap fa-3x mb-3"></i>
             <h3 class="stat-number" data-target="500">0</h3>
-            <p>Children Educated</p>
+            <p style="letter-spacing: 2px">Children Educated</p>
           </div>
           <div class="col-md-4 text-center">
             <i class="fas fa-briefcase fa-3x mb-3"></i>
             <h3 class="stat-number" data-target="250">0</h3>
-            <p>Mothers Employed</p>
+            <p style="letter-spacing: 2px">Mothers Employed</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- who we are -->
+    <section class="container my-5">
+      <div class="about-card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Who we are</h2>
+          <!-- Icon Divider-->
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+          </div>
+
+          <center>
+            <p class="card-text lead text-center who-we-are">
+              Tender Mothers is a non-profit organization dedicated to uplifting
+              mothers in rural communities through health, education, and
+              economic empowerment. We work directly with local health workers,
+              educators, and volunteers to provide life-changing support.
+            </p>
+          </center>
+        </div>
+      </div>
+    </section>
 
     <!-- Mission Statement -->
-    <div class="container my-5">
+    <section class="container my-5">
       <div class="mission-card">
         <div class="card-body">
-          <h2 class="card-title text-center mb-4">Our Mission</h2>
-          <p class="card-text text-center">
+          <h2 class="card-title text-center">Our Mission</h2>
+          <!-- Icon Divider-->
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+          </div>
+
+          <p id="website-mission" class="card-text lead text-center w-lg-50">
             To have healthy and happy children, with fully independent mothers.
           </p>
         </div>
       </div>
-    </div>
-
-    <hr />
+      <hr />
+    </section>
 
     <!-- Team Section -->
-    <div class="container my-5" id="team">
+    <section class="container my-5" id="team">
       <h2 class="text-center mb-4">Our Team</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
       <div class="row">
-        <div class="col-md-4">
+        <!-- team member 1 -->
+        <div class="col-md-4 team-member mb-2">
           <div class="card">
             <center>
               <img
+                id="team-member-1-image"
                 src="assets/prof-pic.JPG"
-                class="card-img-top img-fluid w-50"
+                class="card-img-top img-fluid"
                 alt="Team Member 1"
               />
             </center>
-            <div class="card-body bg-dark text-light">
+            <div class="card-body text-light" style="background-color: #001f3f">
               <center>
-                <h5 class="card-title">Mighty Fred</h5>
-                <p class="card-text">Founder & CEO</p>
+                <h5 class="card-title team-member-1-name">Mighty Fred</h5>
+                <p class="card-text team-member-1-role">Founder & CEO</p>
               </center>
             </div>
           </div>
         </div>
 
         <!-- team member 2 -->
-        <div class="col-md-4">
+        <div class="col-md-4 team-member mb-2 d-none">
           <div class="card">
             <center>
               <img
+                id="team-member-2-image"
                 src="assets/prof-pic.JPG"
-                class="card-img-top img-fluid w-50"
+                class="card-img-top img-fluid"
                 alt="Team Member 1"
               />
             </center>
-            <div class="card-body bg-dark text-light">
+            <div class="card-body text-light" style="background-color: #001f3f">
               <center>
-                <h5 class="card-title">Jane Doe</h5>
-                <p class="card-text">Secretary</p>
+                <h5 class="card-title team-member-2-name">Jane Doe</h5>
+                <p class="card-text team-member-2-role">Secretary</p>
               </center>
             </div>
           </div>
         </div>
 
         <!-- team member 3 -->
-        <div class="col-md-4">
+        <div class="col-md-4 team-member d-none">
           <div class="card">
             <center>
               <img
+                id="team-member-3-image"
                 src="assets/prof-pic.JPG"
                 class="card-img-top img-fluid w-50"
                 alt="Team Member 1"
               />
             </center>
-            <div class="card-body bg-dark text-light">
+            <div class="card-body text-light" style="background-color: #001f3f">
               <center>
-                <h5 class="card-title">Smith Jones</h5>
-                <p class="card-text">Co-ordinator</p>
+                <h5 class="card-title team-member-3-name">Smith Jones</h5>
+                <p class="card-text team-member-3-role">Co-ordinator</p>
               </center>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <hr />
 
@@ -224,7 +286,11 @@
     <div class="bg-dark py-1 text-light">
       <div class="container my-5 text-center" id="get-involved">
         <h2 class="mb-4">Get Involved</h2>
-        <button class="btn btn-donate secondary-color fw-bold btn-lg me-3">
+        <button
+          class="btn btn-donate secondary-color fw-bold btn-lg me-3"
+          data-bs-toggle="modal"
+          data-bs-target="#donationModal"
+        >
           Donate
         </button>
         <button class="btn primary-color text-light btn-donate btn-lg">
@@ -233,67 +299,73 @@
       </div>
     </div>
 
-    <!-- Donate modal -->
+    <!-- Donation Modal -->
     <div
-      class="modal fade"
-      id="DonateModal"
+      class="modal fade donate-modal"
+      id="donationModal"
       tabindex="-1"
-      role="dialog"
-      aria-labelledby="DonateModalLabel"
+      aria-labelledby="donationModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title fw-bold" id="DonateModalLabel">
-              Donate To TenderMothers
-            </h4>
-
-            <div
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-hidden="true"
-            >
-              &times;
-            </div>
-          </div>
-          <div class="modal-body">
-            <input
-              class="donation-modal-input"
-              type="text"
-              placeholder="Name"
-            />
-            <input
-              class="donation-modal-input"
-              type="text"
-              placeholder="Email"
-            />
-            <input
-              class="donation-modal-input"
-              type="number"
-              placeholder="Amount"
-            />
-
-            <div>
-              <div
-                id="donate-btn"
-                class="btn btn-primary btn-lg mt-3 fs-5 text-center"
-                @click="processDonation"
-              >
-                <span class="spinner-border d-none" role="status"></span>
-                <span>Send Donation</span>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
+            <h5 class="modal-title" id="donationModalLabel">
+              Support Tender Mothers
+            </h5>
             <button
               type="button"
-              class="donate-modal-close-btn btn btn-default"
+              class="btn-close"
               data-bs-dismiss="modal"
-            >
-              Close
-            </button>
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center">
+              Your donation helps empower mothers in rural communities.
+            </p>
+
+            <!-- Amount Selection -->
+            <div class="text-center mb-3">
+              <button class="btn btn-outline-primary amount-btn">
+                UGX5000
+              </button>
+              <button class="btn btn-outline-primary amount-btn">
+                UGX10000
+              </button>
+              <button class="btn btn-outline-primary amount-btn">
+                UGX20000
+              </button>
+              <button class="btn btn-outline-primary amount-btn">
+                UGX50000
+              </button>
+              <input
+                type="number"
+                class="form-control mt-2"
+                placeholder="Enter Custom Amount"
+              />
+            </div>
+
+            <!-- Payment Method -->
+            <h6 class="text-center">Choose Payment Method</h6>
+            <div class="text-center payment-icons">
+              <span
+                class="p-2 fw-bold fs-5 cursor-pointer"
+                style="background-color: yellow"
+                >MTN</span
+              >
+
+              <span
+                class="p-2 fw-bold text-light fs-5 cursor-pointer"
+                style="background-color: red"
+                >Airtel</span
+              >
+            </div>
+
+            <!-- Donate Button -->
+            <div class="text-center mt-4">
+              <button class="btn btn-success btn-lg w-100">Donate Now</button>
+            </div>
           </div>
         </div>
       </div>
@@ -373,6 +445,7 @@
         observer.observe(counter);
       });
     </script>
+    <script src="js/index.js"></script>
     <script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

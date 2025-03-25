@@ -57,7 +57,7 @@
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light secondary-color">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html"
+        <a class="navbar-brand fw-bold" style="color: #333" href="index.html"
           ><img
             src="assets/logo.jpg"
             alt="logo"
@@ -96,7 +96,7 @@
               <a
                 class="nav-link text-light cursor-pointer"
                 data-bs-toggle="modal"
-                data-bs-target="#DonateModal"
+                data-bs-target="#donationModal"
                 >Donate Here</a
               >
             </li>
@@ -159,67 +159,66 @@
       </div>
     </main>
 
-    <!-- Donate modal -->
+    <!-- Donation Modal -->
     <div
-      class="modal fade"
-      id="DonateModal"
+      class="modal fade donate-modal"
+      id="donationModal"
       tabindex="-1"
-      role="dialog"
-      aria-labelledby="DonateModalLabel"
+      aria-labelledby="donationModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title fw-bold" id="DonateModalLabel">
-              Donate To TenderMothers
-            </h4>
-
-            <div
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-hidden="true"
-            >
-              &times;
-            </div>
-          </div>
-          <div class="modal-body">
-            <input
-              class="donation-modal-input"
-              type="text"
-              placeholder="Name"
-            />
-            <input
-              class="donation-modal-input"
-              type="text"
-              placeholder="Email"
-            />
-            <input
-              class="donation-modal-input"
-              type="number"
-              placeholder="Amount"
-            />
-
-            <div>
-              <div
-                id="donate-btn"
-                class="btn btn-primary btn-lg mt-3 fs-5 text-center"
-                @click="processDonation"
-              >
-                <span class="spinner-border d-none" role="status"></span>
-                <span>Send Donation</span>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
+            <h5 class="modal-title" id="donationModalLabel">
+              Support Tender Mothers
+            </h5>
             <button
               type="button"
-              class="donate-modal-close-btn btn btn-default"
+              class="btn-close"
               data-bs-dismiss="modal"
-            >
-              Close
-            </button>
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center">
+              Your donation helps empower mothers in rural communities.
+            </p>
+
+            <!-- Amount Selection -->
+            <div class="text-center mb-3">
+              <button class="btn btn-outline-primary amount-btn">$5</button>
+              <button class="btn btn-outline-primary amount-btn">$10</button>
+              <button class="btn btn-outline-primary amount-btn">$20</button>
+              <button class="btn btn-outline-primary amount-btn">$50</button>
+              <input
+                type="number"
+                class="form-control mt-2"
+                placeholder="Enter Custom Amount"
+              />
+            </div>
+
+            <!-- Payment Method -->
+            <h6 class="text-center">Choose Payment Method</h6>
+            <div class="text-center payment-icons">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Visa_Logo.png"
+                alt="Visa"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/88/MasterCard_Logo.svg"
+                alt="MasterCard"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                alt="PayPal"
+              />
+            </div>
+
+            <!-- Donate Button -->
+            <div class="text-center mt-4">
+              <button class="btn btn-success btn-lg w-100">Donate Now</button>
+            </div>
           </div>
         </div>
       </div>
