@@ -62,6 +62,27 @@ h6 {
   color: #fff;
 }
 
+/* Styles specific to the Volunteer Modal */
+#volunteerModal .modal-content {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#volunteerModal .modal-header {
+  background: #004080;
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+#volunteerModal .btn-custom {
+  background: #ff9900;
+  color: white;
+  font-weight: bold;
+}
+#volunteerModal .btn-custom:hover {
+  background: #cc7700;
+}
+
+/* Styles specific to the Donations Modal */
 .donate-modal .modal-content {
   border-radius: 12px;
   padding: 20px;
